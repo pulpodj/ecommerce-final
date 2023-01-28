@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home - Ecommerce</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/images/logo.png" alt="" width="50">
+            </a>
+            <div class="user-navbar">
+                <div class="user-navbar__cart-icon-container">
+                    <!-- TODO_ add font icon and icon item -->
+                    <i class="fa-solid fa-cart-shopping" class="user-navbar__cart-icon-container"></i>   
+                </div> 
+                <div class="user-navbal__user-avatar-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de Usuario">
+                </div>
+                <!-- TODO_ avatar de la persona logueada o nombre -->    
+            </div>
+            
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+            
+            <label for="" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+            
+            <ul class="navbar__nav-links-container">
+                <li class="navbar__nav-item">
+                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/contact/contact.html"    class="navbar__nav-link">Contacto</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/about-us/about-us.html"  class="navbar__nav-link">Nosotros</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/register/register.html"  class="navbar__nav-link">Registrarse</a>
+                </li>
+            </ul>
+            
+        </nav>
+       
+    </header>
+    <!-- TODO: Implementar carrusel en segundo modulo -->
+    <main class="main">
+        
+        <section class="section-cards">
+            <header class="section-cards__header">
+                <div class="section-cards__title-container">
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/hacienda.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Consignación de Hacienda
+                        </a>
+                    </div>
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/nutricionAnimal.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Nutrición Animal
+                        </a>
+                    </div>
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/acopiol.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Acopio de Granos
+                        </a>
+                    </div>
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/agroinsumos.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Agroinsumos
+                        </a>
+                    </div>
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/semillero.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Semillero
+                        </a>
+                    </div>
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/combustible.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Combustible
+                        </a>
+                    </div>
+                    <div class="section-cards-title">
+                        <img class="section-cards-title__img" src="/assets/images/slider/seguros.png" alt="">
+                        <a href="#" class="section-cards-title__link">
+                            Seguros
+                        </a>
+                    </div>
+                </div>
+                <div class="section-cards__products-search-conteiner">
+                    <div class="product-search">
+                        <label for="" class="product-search__label">Buscar</label>
+                        <input type="Text" placeholder="Buscar" class="product-search__input">
+                        <button class="product-search__btn">Buscar</button>
+                    </div>
+                    <div class="section-cards__products-count">
+                        Se encontraron X Productos
+                    </div>
+                </div>
+                
+            </header>
+            <h1 class="cards__category">
+                Categoria: Ofertas
+            </h1>
+            <div class="cards-container">
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/01-glifosato.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Glifosato
+                        </div>
+                        <p class="card__description">
+                            Herbicida no selectivo para el control postemergente de malezas anuales y perennes en áreas agrícolas, industriales, caminos, vías férreas, etc.  Este herbicida no deja residuos en el suelo y se inactiva al entrar en contacto con el mismo.
+                        </p>
+                        <div class="card__price">
+                            $ 24.900,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/02- paraquat.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Paraquat
+                        </div>
+                        <p class="card__description">
+                            Herbicida que actúa en todos los tejidos vegetales verdes, y es particularmente activo contra gramíneas anuales y malezas de hoja ancha. Necesita de la fotosíntesis activa para manifiesta su efecto. En condiciones cálidas y soleadas, la actividad herbicida se desarrolla rápidamente en unas pocas horas.
+                        </p>
+                        <div class="card__price">
+                            $ 31.100,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/03- Cletodim.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Cletodim
+                        </div>
+                        <p class="card__description">
+                            Herbicida selectivo postemergente sistémico para el control de malezas gramíneas anuales y perennes.
+                            No controla malezas de hoja ancha ni ciperáceas.Es absorbido rápidamente por el follaje y se trasloca por floema y xilema.
+                        </p>
+                        <div class="card__price">
+                            $ 5.600,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/04- Urea.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Urea Granulada 
+                        </div>
+                        <p class="card__description">
+                            La urea es el fertilizante más utilizado. Es el sólido granulado de mayor concentración de nitrógeno (N).
+                            Es componente de vitaminas y de los sistemas de energía de la planta.Es necesario para la síntesis de la clorofila y como parte de la molécula de la clorofila.
+                        </p>
+                        <div class="card__price">
+                            $ 3.900,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/05-Solmix.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Solmix
+                        </div>
+                        <p class="card__description">
+                            Estimulante y acondicionador del suelo. es un formulado a base de un complejo de aminoácidos libres de origen vegetal con un extracto orgánico de ácidos húmicos y fúlvicos, desarrollado como estimulante y acondicionador del suelo perteneciente a la familia de bionutrientes.
+                        </p>
+                        <div class="card__price">
+                            $ 65.900,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/06- Fosfato Monoamonico.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Fosfato Monoamonico
+                        </div>
+                        <p class="card__description">
+                            Excelente fertilizante sólido para ser utilizado a la siembra, por su alto contenido de fosforo que favorece el desarrollo radicular de las plantas.
+                        </p>
+                        <div class="card__price">
+                            $ 33.200,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/07-Super-Fosfato-Simple.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            SuperFosfato Simple
+                        </div>
+                        <p class="card__description">
+                            Superfosfato simple combina fósforo, azufre y calcio en forma sólida.Tiene una excelente relación al menor costo, y puede combinarse con otros elementos en mezclas físicas, como excelente fuente de P, S y Ca.
+                        </p>
+                        <div class="card__price">
+                            $ 8.800,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/08-micro-sz.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            MicroEssentials SZ
+                        </div>
+                        <p class="card__description">
+                            Es una línea de fertilizantes Premium que por la exclusiva tecnología empleada en su producción incorpora Macro y Micro nutrientes esenciales asegurando una concentración constante y balanceada en cada grano cubriendo así los requerimientos nutricionales de cada planta.
+                        </p>
+                        <div class="card__price">
+                            $ 11.700,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/09- Haloxifop.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Haloxifop
+                        </div>
+                        <p class="card__description">
+                            Es un herbicida post-emergente de acción sistémica selectivo. Controla malezas gramíneas perennes y anuales. Las malezas tratadas detienen su crecimiento a los pocos días de la aplicación. En los rizomas, destruye inicialmente las yemas, y luego el tejido se necrosa.
+                        </p>
+                        <div class="card__price">
+                            $ 2.500,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card__header">
+                        <img src="/assets/images/card/10-sulfentrasone.webp" alt="#" class="card__image">
+                    </div>
+                    <div class="card__body">
+                        <div class="card__title">
+                            Sulfentrazone
+                        </div>
+                        <p class="card__description">
+                            Herbicida sistémico residual, familia de las triazolinonas y del grupo de los PPO. Selectivo para el control de malezas de hoja ancha. Aplicación preemergente de la maleza. Especialmente recomendado para control de yuyo colorado resistente. Formulación SC.
+                        </p>
+                        <div class="card__price">
+                            $ 75.900,00
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__date">
+                            13/12/2022
+                        </div>
+                        <div class="card__btn-container">
+                            <a href="#" class="card__btn">
+                                Detalle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <div class="whatsapp-container" >
+        <a href="https://wa.me/543404650015?text=Quiero%20realizar%20una%20consulta" target="_blank">
+            <img src="/assets/images/Whatsapp-logo.png" alt="" class="whatsapp-container__btn">
+        </a>
+    </div>
+    <footer class="footer">
+        <div class="footer_column ">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.facebook.com/CooperativaGuillermoLehmann" class="footer__contact-link">
+                        <i class="fa-brands fa-facebook footer__contact-icon--facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.instagram.com/la_lehmann/" class="footer__contact-link">
+                        <i class="fa-brands fa-instagram footer__contact-icon--instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.linkedin.com/company/la-lehmann/" class="footer__contact-link">
+                        <i class="fa-brands fa-linkedin footer__contact-icon--linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_column footer__column-med">
+            <img src="/assets/images/logo.png" alt="#" class="footer__logo">
+            <h2 class="footer__company-name">
+                © 2023 Cooperativa Guillermo Lehmann
+            </h2>
+            <p class="copyright">
+                
+                Todos los derechos reservados
+            </p>
+        </div>
+        <div class="footer_column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    
+                    <a href="tel:(03404) 470051" class="footer__contact-link">
+                        <i class="fa-solid fa-phone footer__contact-icon"></i>
+                        Telefono
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.google.com/maps/dir//@\-31.4368125,-61.2590625/" class="footer__contact-link">
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                        Localizacion
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="" class="footer__contact-link">
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        Email
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

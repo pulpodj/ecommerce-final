@@ -1,0 +1,172 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    
+    border-bottom: 5px solid $color-yellow-lehmann;
+        
+}
+
+.navbar {
+    background-color: $color-gb-secondary;
+    color: $color-text-light;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 5px solid $color-green-lehmann;
+
+    &__menu-label {
+        color: $color-text-light;
+        margin-left: auto;
+        height: 42px;
+        background-color: grey;
+        width: 44px;
+        margin-right: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__menu-btn {
+        position: absolute;
+        width: 70px;
+        left: 260px;
+        top: 0px;
+        bottom: 0px;
+        opacity: 0;
+    }
+
+    &__menu-btn:checked ~ &__menu-label &__menu-icon {
+        background: transparent;
+        &::after {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+    }
+
+
+
+    &__menu-btn:checked ~ &__nav-links-container {
+        height: calc(100vh - 50px);
+}
+
+    &__menu-icon {
+        height: 2px;
+        background-color: $color-text-light;
+        width: 18px;
+        position: relative;
+
+        &::after, &::before {
+            content: '';
+            height: 2px;
+            background-color: $color-text-light;
+            position: absolute;
+            width: 100%;
+            transition: all .2s ease-out;
+        }
+
+        &::after {
+            top: 5px;
+        }
+
+        &::before {
+            top: -5px;
+        }
+    }
+
+    &__logo {
+        height: 45px;
+        width: auto;
+        padding: 5px;
+    }
+
+
+    &__nav-links-container {
+        
+        list-style: none;
+        flex: 2;
+        position: absolute;
+        top: 50px;
+        background-color: $color-gb-secondary;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: all .2s ease-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__nav-item {
+        padding: 0.75rem;
+        // text-decoration: none;
+        color: $color-text-light;
+        &:not(:last-child){
+                border-bottom: 1px solid white; 
+            }
+
+        }  
+
+    &__nav-link {
+        color: $color-text-light;
+        // text-decoration: none;
+    }    
+
+    }
+
+.user-navbar {
+    margin-left: auto;
+    color: white;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0 1rem;
+    &__user-avatar {
+        width: 40px;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .navbar{
+        &__menu-btn {
+            left: 330px;
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .navbar{
+        &__menu-label, &__menu-btn {
+            display: none;
+        }
+    
+        &__nav-links-container {
+            position: static;
+            flex-direction: row;
+            height: 100% !important;
+            width: auto;
+        }
+        &__nav-item {
+            padding: 0.75rem;
+            // text-decoration: none;
+            color: $color-text-light;
+        &:not(:last-child){
+                border-bottom: none; 
+            } 
+        }
+    }
+} 
+
+
+
+.user-navbar {
+    order: 3;
+}
