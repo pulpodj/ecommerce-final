@@ -60,7 +60,7 @@
                 </div>  
             </header>
 
-            <form class="section-register__form">
+            <form class="section-register__form" id="registerForm">
                 <div class="section-register__form-items">
                     <label for="fullName" >Nombre Completo</label><br>
                     <input type="text" name="fullName" class="section-register__form-input"
@@ -68,25 +68,25 @@
                     required minlength="8" maxlength="50" autofocus >
                 </div>
                 <div class="section-register__form-items">
-                    <label for="mail" >Email</label><br>
-                    <input type="email" name="mail" id="mail" required
+                    <label for="email" >Email</label><br>
+                    <input type="email" name="email" id="email" required
                     placeholder="example@email.com" class="section-register__form-input"
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> 
                 </div>
                 <div class="section-register__form-items">
-                    <label for="pass" >Contraseña</label><br>
-                    <input type="password" name="pass" id="pass" class="section-register__form-input" 
+                    <label for="password1" >Contraseña</label><br>
+                    <input type="password" name="password1" id="password1" class="section-register__form-input" 
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
                 </div>
                 <div class="section-register__form-items">
-                    <label for="pass" >Repetir Contraseña</label><br>
-                    <input type="password" name="pass" id="pass"  
+                    <label for="password2" >Repetir Contraseña</label><br>
+                    <input type="password" name="password2" id="password2"  
                     class="section-register__form-input"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
                 </div>
                 <div class="section-register__form-items">
-                    <label for="edad" >Edad</label><br>
-                    <input type="number" name="edad" id="edad" required min="16" class="section-register__form-input" max="99"> 
+                    <label for="age" >Edad</label><br>
+                    <input type="number" name="age" id="age" required min="16" class="section-register__form-input" max="99"> 
                 </div>    
                 <div class="section-register__form-items">
                     <label for="bornDateInput">Fecha de Nacimiento</label><br>
@@ -362,7 +362,7 @@
                     <label for="terminos">Acepto los términos y condiciones</label><br> 
                 </div>
                 <div class="section-register__form-items">
-                    <button type="submit" class="section-register__form-btn" >Enviar</button> 
+                    <button type="submit" class="section-register__form-btn" id="registerSubmit" >Enviar</button> 
                 </div>
                 
             </form>
@@ -436,5 +436,6 @@
         </div>
     </footer>
     
+ <script src="/pages/register/js/register.js"></script>   
 </body>
 </html>

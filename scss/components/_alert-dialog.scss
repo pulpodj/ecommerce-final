@@ -1,0 +1,19 @@
+.alert-dialog {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-bg-primary;
+    padding: 2rem;
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+   // transition: display;
+    width: 200px;
+    height: 50px;
+
+}
+
+.alert-dialog.error {
+    background-color: red;
+}
