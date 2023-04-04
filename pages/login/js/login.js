@@ -21,7 +21,7 @@ loginForm.addEventListener('submit',(event) => {
     })
     
     if(!user || user.password !== password.value) {
-        alert(`Los Datos ingresados no son correctos`);
+        showAlert(`Los Datos ingresados no son correctos`,'error');
     }
     
     if(user.password === password.value){

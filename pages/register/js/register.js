@@ -56,7 +56,7 @@ registerForm.addEventListener('submit', (evt)=>{
 // Funciones con parámetros nombrados
 function customFont({ color, size, weight }) {
     const divTexto = document.createElement('p');
-    divTexto.innerText = Un texto a modificar
+    divTexto.innerText = 'Un texto a modificar'
 
     divTexto.style.color = color || '#DDF40A';
     divTexto.style.fontSize = size || '16px';
