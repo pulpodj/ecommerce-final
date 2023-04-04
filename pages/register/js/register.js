@@ -55,18 +55,37 @@ function showAlert(text, type){
     //vamos hacer nuestro pripio alert 
 
     const alertDialog = document.createElement('div');
-    alertDialog.classList.add('alert-dialog0');
+    alertDialog.classList.add('alert-dialog');
 
     if(type === 'error'){
         alertDialog.style.backgroundColor = 'red';
     }
 
     alertDialog.innerText = text;
+
+
     document.querySelector('body').appendChild(alertDialog);
+    //demora la aparicion
+    setTimeout(()=> alertDialog.classList.add('show'),10)
 
     setTimeout(()=>{
-        alertDialog.remove();
-       // window.location.href = '/pages/login/login.html';   
+        alertDialog.classList.remove('show')
+        //demora se borrado
+        setTimeout(()=>  alertDialog.remove(),10)
+      //  window.location.href = '/pages/login/login.html';   
     },3000);
 }
 
+// Funciones con parámetros nombrados
+function customFont({ color, size, weight }) {
+    const divTexto = document.createElement('p');
+    divTexto.innerText = Un texto a modificar
+
+    divTexto.style.color = color || '#DDF40A';
+    divTexto.style.fontSize = size || '16px';
+    divTexto.style.fontWeight = weight || 500;
+
+    document.body.appendChild(divTexto);
+}
+
+customFont({ weight: 800 });
