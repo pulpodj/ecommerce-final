@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Ecommerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/images/logo.png" alt="" width="50">
+            </a>
+            <div class="user-navbar">
+                <div class="user-navbar__cart-icon-container">
+                    <!-- TODO_ add font icon and icon item -->
+                    <i class="fa-solid fa-cart-shopping" class="user-navbar__cart-icon-container"></i>   
+                </div> 
+                <div class="user-navbal__user-avatar-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de Usuario">
+                </div>
+                <!-- TODO_ avatar de la persona logueada o nombre -->    
+            </div>
+            
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+            
+            <label for="" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+            
+            
+        </nav>
+       
+    </header>
+    <!-- TODO: Implementar carousel en 2do módulo -->
+    <main class="main">
+        <section class="section-register">
+            <header class="section-register__header">
+                <div class="section-register__title">
+                    <h1>
+                        Login
+                    </h1>
+                </div>  
+            </header>
+
+            <form class="section-register__form" id="loginForm">
+                
+                <div class="section-register__form-items">
+                    <label for="email" >Usuario</label><br>
+                    <input type="email" name="email" id="email" required
+                    placeholder="example@email.com" class="section-register__form-input"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> 
+                </div>
+                <div class="section-register__form-items">
+                    <label for="password" >Contraseña</label><br>
+                    <input type="password" name="password" id="password" class="section-register__form-input" 
+                     required>
+                </div>
+                
+                <div class="section-register__form-items">
+                    <button type="submit" class="section-register__form-btn" id="registerSubmit" >Ingresar</button> 
+                </div>
+                
+            </form>
+
+        </section>
+    </main>
+    <div class="whatsapp-container" >
+        <a href="https://wa.me/543404650015?text=Quiero%20realizar%20una%20consulta" target="_blank">
+            <img src="/assets/images/Whatsapp-logo.png" alt="" class="whatsapp-container__btn">
+        </a>
+    </div>
+    <footer class="footer">
+        <div class="footer_column ">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.facebook.com/CooperativaGuillermoLehmann" class="footer__contact-link">
+                        <i class="fa-brands fa-facebook footer__contact-icon--facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.instagram.com/la_lehmann/" class="footer__contact-link">
+                        <i class="fa-brands fa-instagram footer__contact-icon--instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.linkedin.com/company/la-lehmann/" class="footer__contact-link">
+                        <i class="fa-brands fa-linkedin footer__contact-icon--linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_column footer__column-med">
+            <img src="/assets/images/logo.png" alt="#" class="footer__logo">
+            <h2 class="footer__company-name">
+                © 2023 Cooperativa Guillermo Lehmann
+            </h2>
+            <p class="copyright">
+                
+                Todos los derechos reservados
+            </p>
+        </div>
+        <div class="footer_column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    
+                    <a href="tel:(03404) 470051" class="footer__contact-link">
+                        <i class="fa-solid fa-phone footer__contact-icon"></i>
+                        Telefono
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    
+                    <a href="https://www.google.com/maps/dir//@\-31.4368125,-61.2590625/" class="footer__contact-link">
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                        Localizacion
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="" class="footer__contact-link">
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        Email
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+ <script src="/js/alert.js"></script>   
+ <script src="/pages/login/js/login.js"></script>   
+</body>
+</html>
