@@ -26,8 +26,10 @@ loginForm.addEventListener('submit',(event) => {
     
     if(user.password === password.value){
         localStorage.setItem('currentUser',JSON.stringify(user));
-        alert('Login correcto')
-    
+        showAlert('Login correcto')
+        setTimeout(() => {
+            window.location.href = "/index.html";
+        }, 1500)
     }
     //3- Guardar en el registro (LocalStorage) los datos de la persona logueada en ese momento.
     
