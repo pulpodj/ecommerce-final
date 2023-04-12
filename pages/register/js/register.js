@@ -36,7 +36,8 @@ registerForm.addEventListener('submit', (evt)=>{
         name: el.fullName.value,
         age: el.age.value,
         password: el.password1.value,
-        email: el.email.value
+        email: el.email.value,
+        role: 'USER_ROLE'
     }
 
     //Agregar en el array primero

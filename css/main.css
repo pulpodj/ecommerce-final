@@ -133,6 +133,21 @@ body {
 .user-navbar__user-avatar {
   width: 40px;
 }
+.user-navbar__cart-icon-container {
+  color: orange;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+.user-navbar__cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
 
 @media screen and (min-width: 550px) {
   .navbar__menu-btn {
