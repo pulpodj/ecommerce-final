@@ -85,12 +85,8 @@
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
                 </div>
                 <div class="section-register__form-items">
-                    <label for="age" >Edad</label><br>
-                    <input type="number" name="age" id="age" required min="16" class="section-register__form-input" max="99"> 
-                </div>    
-                <div class="section-register__form-items">
                     <label for="bornDateInput">Fecha de Nacimiento</label><br>
-                    <input type="date" name="FechaNaciemiento" id="bornDateInput" class="section-register__form-input"
+                    <input type="date" name="fechaNac" id="bornDateInput" class="section-register__form-input"
                     placeholder="dd/mm/aaaa"     min="1923-01-01" max="2006-01-01">
                 </div> 
                 <div class="section-register__form-items">
@@ -349,12 +345,12 @@
                     </select>
                 </div>
                 <div class="section-register__form-items">
-                    <label for="sexo" >Sexo</label><br><br>
-                    <input class="section-register__form-chk" type="radio" id="femenino" name="sexo" value="femenino">
+                    <label for="gender" >Sexo</label><br><br>
+                    <input class="section-register__form-chk" type="radio" id="femenino" name="gender" value="femenino">
                     <label for="femenino">Femenino</label>
-                    <input class="section-register__form-chk"  type="radio" id="masculino" name="sexo" value="masculino">
+                    <input class="section-register__form-chk"  type="radio" id="masculino" name="gender" value="masculino">
                     <label for="masculino">Masculino</label>
-                    <input class="section-register__form-chk"  type="radio" id="otro" name="sexo" value="otro">
+                    <input class="section-register__form-chk"  type="radio" id="otro" name="gender" value="otro">
                     <label for="otro">Otro</label> <br>
                 </div>
                 <div class="section-register__form-items">
@@ -435,7 +431,7 @@
             </ul>
         </div>
     </footer>
-    
- <script src="/pages/register/js/register.js"></script>   
+ <script src="/js/alert.js"></script>   
+ <script src="/js/register.js"></script>   
 </body>
 </html>

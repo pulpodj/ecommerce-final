@@ -54,26 +54,31 @@
         // text-align: justify;
     }
 
-    &__price {
-        font-weight: 500;
-        font-size: 1.25rem;
-        color: $color-green-lehmann;
-    }
-
+    
     &__footer {
         display: flex;
         justify-content: space-between;
         padding: 1rem;
     }
 
+    &__date-price{
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     &__date {
-        color: dodgerblue;
+        color: rgb(23, 5, 185);
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 1.25rem;
+        color: $color-green-lehmann;
     }
 
     &__btn {
-        // padding: 1rem;
-        // background-color: dodgerblue;
-        // color: white;
         text-decoration: none;
         background-color: dodgerblue;
         padding: 8px 12px;
@@ -88,8 +93,24 @@
         background-color: rgb(11, 93, 175);
     }
 
+    &__btn-detail {
+        text-decoration: none;
+        background-color: rgb(125, 182, 177);
+        padding: 8px 12px;
+        border-radius: 5px;
+        color: black;
+        box-shadow: 3px 3px 5px 1px black;
+        transition:  0.5s ease-in;
+
+    }
+    
+    &__btn-detail:hover {
+        color: white;
+    }
+
+
     &:hover {
-        background-color: cadetblue;
+        background-color: rgb(182, 190, 190);
         box-shadow: 5px 5px 10px rgba(19, 13, 13, 0.484);
         border-top: 3px solid blue;
         border-bottom: 3px solid blue;

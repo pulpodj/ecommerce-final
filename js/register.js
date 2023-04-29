@@ -4,9 +4,8 @@ const registerForm = document.querySelector('#registerForm');
 const resgisterBtn = document.getElementById('registerSubmit');
 
 registerForm.addEventListener('submit', (evt)=>{
-    console.log()
-    evt.preventDefault();
-
+     evt.preventDefault();
+     
     //tomar los datos y amar el objeto usuario
     const el = evt.target.elements;
     console.log(el)
@@ -33,10 +32,12 @@ registerForm.addEventListener('submit', (evt)=>{
     //
 
     const use = {
-        name: el.fullName.value,
-        age: el.age.value,
-        password: el.password1.value,
+        fullName: el.fullName.value,
         email: el.email.value,
+        password: el.password1.value,
+        date: el.fechaNac.value,
+        country: el.country.value,
+        gender: el.gender.value,
         role: 'USER_ROLE'
     }
 
@@ -46,9 +47,9 @@ registerForm.addEventListener('submit', (evt)=>{
     localStorage.setItem( 'users',JSON.stringify(users));
 
     showAlert('El usuario se registro correctamente','success');
-
-    
-     
+    setTimeout(() => {
+        window.location.href = "/pages/login/login.html";
+    }, 1500)
 })
 
 

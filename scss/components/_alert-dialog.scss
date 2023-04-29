@@ -1,8 +1,9 @@
 .alert-dialog {
     position: absolute;
-    bottom: 15px;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 10px;
     background-color: $color-gb-primary;
     padding: 2rem 3rem;
     font-size: 1.25rem;
@@ -16,8 +17,20 @@
         visibility: visible;
         opacity: 1;
     }
+    &__exito {
+        background-color: rgba(0, 214, 82, 0.795);
+    }
+    &__advertencia {
+        background-color: rgba(176, 228, 56, 0.795);
+    }
+    &__error {
+        background-color: rgba(219, 98, 98, 0.795);
+    }
+    &__info {
+        background-color: rgba(98, 181, 219, 0.795);
+    }
+
+
 }
 
-.alert-dialog.error {
-    background-color: red;
-}
+

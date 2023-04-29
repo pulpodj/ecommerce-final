@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Admin Peoducts</title>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <button for="" class="navbar__menu-label" id="navbar-menu-btn">
+                <span class="navbar__menu-icon" id="navbar-menu-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+            </button>
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/images/logo.png" alt="" width="50">
+            </a>
+            <div class="user-navbar">
+                <div class="user-navbar__cart-icon-container">
+                    <!-- TODO_ add font icon and icon item -->
+                    <a href="/pages/order/order.html">
+                    <i class="fa-solid fa-cart-shopping" class="user-navbar__cart-icon-container"></i>   
+                    </a>
+                    <div class="user-navbar__cart-badge" 
+                    id="cart-count">0</div>
+                </div> 
+                <div class="user-navbar__user-avatar-container" id="user-navbar-user-avatar-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de Usuario">
+                </div>
+                <!-- Sub Menu que se deapliega al dar click en el avatar  --> 
+                
+                    <ul class="user-navbar__nav-links-container" id="user-navbar-nav-links-container">
+                        <li class="user-navbar__nav-item">
+                            <a href="#" class="user-navbar__nav-link">Contacto</a>
+                        </li>
+                        <li class="user-navbar__nav-item">
+                            <a href="/pages/admin-user/admin-user.html" class="user-navbar__nav-link">Admin Usuarios</a>
+                        </li>
+                        <li class="user-navbar__nav-item">
+                            <a href="/pages/admin-product/admin-product.html" class="user-navbar__nav-link">Admin Productos</a>
+                        </li>
+                        <li class="user-navbar__nav-item" id="sign-in">
+                            <a href="/pages/login/login.html"  class="user-navbar__nav-link">Login</a>
+                        </li>
+                    </ul> 
+                
+                  
+            </div>
+            
+            <!-- Menu Principal de la cabecera -->
+            <ul class="navbar__nav-links-container" id="navbar-nav-links-container">
+                <li class="navbar__nav-item">
+                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/contact/contact.html"    class="navbar__nav-link">Contacto</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/about-us/about-us.html"  class="navbar__nav-link">Nosotros</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/register/register.html"  class="navbar__nav-link">Registrarse</a>
+                </li>
+            </ul>
+            
+        </nav>
+       
+    </header>
+
+    <h1 class="admin-product__title">ABM Productos</h1>
+
+<main class="main admin-product-container">
+    <form class="admin-product-form" id="admin-product-form" onsubmit="addProduct(event)"         data-custom="Mi atributo personal">
+    <div class="admin-product-form__items">
+        <label for="name" >Nombre Producto</label><br>
+        <input type="text" name="name" class="admin-product-form__input"
+        id="name" placeholder="Nombre del Producto" 
+        required minlength="3" maxlength="50" autofocus >
+    </div>
+    <div class="admin-product-form__items">
+        <label for="category">Categoria</label><br>
+        <select name="category" id="category"  class="admin-product-form__input" required>
+            <option value="HA">Hacienda</option>
+            <option value="NA">Nutrición Animal</option>
+            <option value="AC">Acopio</option>
+            <option value="AG">Agroinsumos</option>
+            <option value="SE">Semillero</option>
+            <option value="CO">Combustible</option>
+            <option value="SG">Seguro</option>            
+        </select>
+    </div>
+    <div class="admin-product-form__items">
+        <label for="description" >Descripción</label><br>
+        <textarea name="description" class="admin-product-form__input"
+        id="description" rows="5" required> </textarea>
+    </div>
+    <div class="admin-product-form__items">
+        <label for="price" >Precio</label><br>
+        <input type="number" name="price" id="price" required min="1" class="admin-product-form__input"  > 
+    </div>  
+    <div class="admin-product-form__items">
+        <label for="image">URL de Imagen</label><br>
+        <input type="url" name="image" id="image"
+               placeholder="https://example.com"
+               pattern="https://.*" size="30"
+               required
+               class="admin-product-form__input">
+
+    </div>
+    <div class="admin-product-form__items">
+        <label for="bornDateInput">Fecha de Actualización</label><br>
+        <input type="date" name="date" id="bornDateInput" class="admin-product-form__input"
+        placeholder="dd/mm/aaaa"   >
+    </div>
+       
+    <div class="admin-product-form__form-items">
+        <button type="submit" class="admin-product__submit-btn" id="admin-product__submit-btn">Cargar Producto</button> 
+    </div>
+    
+</form>
+<div class="admin-product-table-container">
+    <table class="admin-product-table">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="admin-product-table_body">
+            
+        </tbody>
+    </table>
+</div>
+    
+</main>
+
+<footer class="footer">
+    <div class="footer_column ">
+        <ul class="footer__contact-container">
+            <li class="footer__contact-item">
+                
+                <a href="https://www.facebook.com/CooperativaGuillermoLehmann" class="footer__contact-link">
+                    <i class="fa-brands fa-facebook footer__contact-icon--facebook"></i>
+                    Facebook
+                </a>
+            </li>
+            <li class="footer__contact-item">
+                
+                <a href="https://www.instagram.com/la_lehmann/" class="footer__contact-link">
+                    <i class="fa-brands fa-instagram footer__contact-icon--instagram"></i>
+                    Instagram
+                </a>
+            </li>
+            <li class="footer__contact-item">
+                
+                <a href="https://www.linkedin.com/company/la-lehmann/" class="footer__contact-link">
+                    <i class="fa-brands fa-linkedin footer__contact-icon--linkedin"></i>
+                    LinkedIn
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer_column footer__column-med">
+        <img src="/assets/images/logo.png" alt="#" class="footer__logo">
+        <h2 class="footer__company-name">
+            © 2023 Cooperativa Guillermo Lehmann
+        </h2>
+        <p class="copyright">
+            
+            Todos los derechos reservados
+        </p>
+    </div>
+    <div class="footer_column">
+        <ul class="footer__contact-container">
+            <li class="footer__contact-item">
+                
+                <a href="tel:(03404) 470051" class="footer__contact-link">
+                    <i class="fa-solid fa-phone footer__contact-icon"></i>
+                    Telefono
+                </a>
+            </li>
+            <li class="footer__contact-item">
+                
+                <a href="https://www.google.com/maps/dir//@\-31.4368125,-61.2590625/" class="footer__contact-link">
+                    <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                    Localizacion
+                </a>
+            </li>
+            <li class="footer__contact-item">
+                <a href="" class="footer__contact-link">
+                    <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                    Email
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/admin-product.js"></script>
+</body>
+</html>
