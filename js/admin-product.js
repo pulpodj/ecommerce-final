@@ -34,12 +34,14 @@ function renderizarTabla(){
                 <td class="admin-product__desc">${producto.description}</td>
                 <td class="admin-product__price">$ ${producto.price}</td>
                 <td class="admin-product__date">${producto.date}</td>
-                <td class = "admin-product__actions">
+                <td >
+                <div class = "admin-product__actions">
                 <button class= "admin-product__delete-btn" onclick= "deleteProduct(${index})" >
                 <i class="fa-regular fa-trash-can"></i>
                 </button>
                 <button class= "admin-product__btn-edit" data-indice="${index}" onclick= "editProduct(${index})" >
                 <i class="fa-solid fa-pencil"></i>
+                </div>
                 </button>
                 </td>
             </tr>
@@ -70,7 +72,6 @@ if (editIndex >= 0) {
 }
 
 //Guardarlo en el local storage
-
 localStorage.setItem('products',JSON.stringify( Products));
 
 editIndex = undefined;
@@ -78,6 +79,7 @@ submitBtn.classList.remove('edit-btn');
 submitBtn.innerText = 'Cargar Producto'
 
 renderizarTabla();
+showAlert('Producto añadido Correctamente','exito')
 }
 
 function deleteProduct(id){
@@ -86,6 +88,7 @@ function deleteProduct(id){
     localStorage.setItem('products',JSON.stringify( Products));
     
     renderizarTabla();
+    showAlert('Producto eliminado Correctamente','error')
 }
 
 

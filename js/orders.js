@@ -1,3 +1,4 @@
+//Guardo la orden del local storage en la variable Products
 let Products = JSON.parse(localStorage.getItem('order')) || [];
 
 
@@ -27,11 +28,11 @@ function renderizarTabla(){
                 <td class="order__price">$ ${producto.price}</td>
                 <td class="order__cant">
                 <div class="order-cant-btn">
-                <button class="order-cant-btn__decrement" onclick="decrement('${producto.name}')"
+                <button class="order-cant-btn__decrement" onclick="decrement('${index}')"
                 id="order-cant-btn__decrement" >-</button>
-                <input class="order-cant-btn__input" id="order-cant-input" type="text" 
-                       value="${producto.cant}" onchange="updateTotal('${producto.name}')">
-                <button class="order-cant-btn__increment" onclick="increment('${producto.name}')"
+                <input class="order-cant-btn__input" id="order-cant-input${index}" type="text" 
+                       value="${producto.cant}" onchange="updateTotal('${index}')">
+                <button class="order-cant-btn__increment" onclick="increment('${index}')"
                 id="order-cant-btn__increment">+</button>
                 </div>
                 </td>
@@ -68,72 +69,58 @@ function deleteProduct(id){
     localStorage.setItem('order',JSON.stringify( Products));
     
     renderizarTabla();
-}
+    showAlert('Producto Eliminado de la Orden')
+    contarProductos();
 
-
-function editProduct(id){
-
-    submitBtn.classList.add('edit-btn');
-    submitBtn.innerText = 'Modificar Producto'
-
-   let product = Products[id];
-
-   const el = productForm.elements;
-   
-//    Object.keys(product).forEach((key) => {
-//     if(typeof product[key] === "boolean")
-//         return el[key].checked = product[key];
-
-//     el[key].value = product[key];    
-//    })
-
-    editIndex = id;
-    
-   el.name.value = product.name;
-   el.category.value = product.category,
-   el.description.value = product.description;
-   el.price.value = product.price;
-   el.image.value = product.image;
-   el.date.value = product.date;
 }
 
 function finalizarCompra(){
-    alert('Compra Finalizada')
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  if(!currentUser){
+    showAlert('Debe estar logueado para poder Finalizar la compra','advertencia')
+  } 
+  else{
+    if(Products.length === 0){
+      showAlert('Debe seleccionar un producto para poder Finalizar la compra','advertencia')
+    }else{
+      localStorage.removeItem('order')
+      Products = [];
+      renderizarTabla();
+      showAlert('Compra Finalizada','exito')
+      contarProductos();
+    }
+    
+  } 
+  
 }
 
-function increment(name) {
-    var input = document.getElementById("order-cant-input")
+function increment(id) {
+    var input = document.getElementById(`order-cant-input${id}`)
     var value = parseInt(input.value, 10);
     input.value = isNaN(value) ? 1 : value + 1;
-    updateTotal(name);
+    updateTotal(id);
   }
   
-  function decrement(name) {
-    var input = document.getElementById("order-cant-input")
+  function decrement(id) {
+    var input = document.getElementById(`order-cant-input${id}`)
     var value = parseInt(input.value, 10);
     input.value = isNaN(value) ? 1 : value - 1;
     if (input.value < 1) {
       input.value = 1;
     }
-    updateTotal(name)
+    updateTotal(id)
   }
 
-  function updateTotal(name){
+  function updateTotal(id){
 
-    const cantProd = document.getElementById("order-cant-input"); 
+    const cantProd = document.getElementById(`order-cant-input${id}`); 
             
-    Order.find((prod)=>{
-      if(prod.name === name){
-        prod.cant =  parseInt(cantProd.value);
-        prod.total = prod.cant * parseInt(prod.price);
-        return prod;
-      }
-    })
-
-   
-// //Guardarlo en el local storage
-localStorage.setItem('order',JSON.stringify( Order));
-
+    Products[id].cant =  parseInt(cantProd.value);
+    Products[id].total = Products[id].cant * parseInt(Products[id].price);
+      
+//Guardarlo en el local storage
+localStorage.setItem('order',JSON.stringify( Products));
+renderizarTabla();
 contarProductos();
 
   }

@@ -140,3 +140,24 @@
     }
     
 }
+
+@media screen and (max-width: 600px) {
+    .product-datail-container{
+        flex-direction: column;
+        margin: 2%;
+
+    }
+
+    .product-detail-container-img{
+        // background-color: grey;
+        width: 80%;
+                
+    }
+    
+    .product-detail-container-order{
+        width: 100%;
+       
+    }
+
+
+ } 

@@ -203,3 +203,21 @@
     background-color: #2E5092;
     font-weight: bold;
 }
+
+@media screen and (max-width: 600px) {
+    .order-table-container {
+        width: 600;
+        margin: 0;
+       
+    }
+    
+    .order-table {
+        width: 90%;
+       // border-collapse: collapse;
+    }   
+     
+    .order-cant-btn{
+        margin: 0;
+    }
+
+ } 

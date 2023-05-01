@@ -1,7 +1,6 @@
 const cardContainer = document.getElementById('#card-container');
 const productsLS = JSON.parse(localStorage.getItem('products')) || [];
-//let orderLS = JSON.parse(localStorage.getItem('order')) || [];
-
+const btnCloseCategory = document.getElementById("category-btn-close");
 
 function renderizarProductos(products){
 
@@ -56,38 +55,47 @@ renderizarProductos(productsLS);
 // funcion para los botones de eleccion de categoria
 function elegirCategoria(category){
     const cartCategory = document.getElementById('cards__category');
+    let text;
 
     switch (category) {
         case "HA":
-            cartCategory.innerText = 'Categoria: Consignación de Hacienda';
+            text = 'Categoria: Consig. Hacienda';
             break;
         case "NA":
-            cartCategory.innerText = 'Categoria: Nutrición Animal';
+            text = 'Categoria: Nutrición Animal';
             break;
         case "AC":
-            cartCategory.innerText = 'Categoria: Acopio de Granos';
+            text = 'Categoria: Acopio de Granos';
             break;
         case "AG":
-            cartCategory.innerText = 'Categoria: Agroinsumos';
+            text = 'Categoria: Agroinsumos';
             break;
         case "SE":
-            cartCategory.innerText = 'Categoria: Semillero';
+            text = 'Categoria: Semillero';
             break;
         case "CO":
-            cartCategory.innerText = 'Categoria: Combustibles';
+            text = 'Categoria: Combustibles';
             break;  
         case "SG":
-            cartCategory.innerText = 'Categoria: Seguros';
+            text = 'Categoria: Seguros';
             break;  
         default:
-            cartCategory.innerText = 'Categoria: Todos';
+            text = 'Categoria: Todos';
         }
 
+        if(category != 'Todos')
+            btnCloseCategory.style.display = 'block';
+        else
+        btnCloseCategory.style.display = 'none';
+        cartCategory.innerHTML = `${text}`
         filtrarProductos(category)
 
 }
 
+btnCloseCategory.addEventListener('click',() => {
+    elegirCategoria('Todos')
 
+})
 
 function agregarOrden(id){
     const product = productsLS[id];
@@ -125,12 +133,15 @@ contarProductos();
 
 //Funcion para filtrar la table de usuario segun un texto pasado como parametro
 function filtrarProductos(category){
-     
-    const productsFiltrados = productsLS.filter((producto) => {
+        let productsFiltrados = [];
+    if(category === 'Todos'){
+        productsFiltrados = productsLS;
+    }else{
+        productsFiltrados = productsLS.filter((producto) => {
             const filtra = producto.category.includes(category)
             return filtra
              });
-
+            }
 renderizarProductos(productsFiltrados);
 
 }
@@ -148,16 +159,5 @@ const cant = productsFiltrados.length;
 document.getElementById('products-search-count').innerText = 'Se encontraron ' + cant + ' productos';
 
 renderizarProductos(productsFiltrados);
-
-// if(!cant){
-//   Users = JSON.parse(localStorage.getItem('users')) || [];
-//   cargarTabla();
-//   Swal.fire('No hubo coincidencias')
-// }else{
-//   Users = usersFiltrados;             
-//   cargarTabla();
-//   Users = JSON.parse(localStorage.getItem('users')) || [];
-// }
-
 
 }

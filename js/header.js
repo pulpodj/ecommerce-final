@@ -2,9 +2,10 @@ const signIn = document.getElementById('sign-in');
 const nameUser = document.getElementById('user-navbar__name-user');
 const adminUserLi = document.getElementById('user-navbar__admin-user');
 const adminProductLi = document.getElementById('user-navbar__admin-product');
-
-
 const cartCount = document.getElementById('cart-count');
+const linkRegister = document.getElementById('navbar-nav-register')
+const linkAbout = document.getElementById('navbar-nav-about')
+
 let Order = JSON.parse(localStorage.getItem('order')) || [];
 
 
@@ -22,12 +23,18 @@ if(currentUser){
         adminUserLi.style.display = 'none';
         adminProductLi.style.display = 'none';
     }
+
+    linkRegister.style.display = 'none';
+    linkAbout.style.borderBottom = 'none';
+
     }
     else {
         adminUserLi.style.display = 'none';
         adminProductLi.style.display = 'none';
+        linkRegister.style.display = 'block';
         
     }
+
 
 }
 
@@ -81,7 +88,7 @@ function contarProductos(){
     Order.forEach((prod) => {
         cantidad += prod.cant; 
     })
-    cartCount.innerText = cantidad;
+    cartCount.innerHTML = cantidad;
 
 }
 

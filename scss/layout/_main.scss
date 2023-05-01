@@ -38,3 +38,17 @@
         background-color: $color-green-lehmann;
     }
 }
+
+.cards-category-container{
+    display: flex;
+    justify-content: left;
+
+    &__btn{
+        border: none;
+        margin: 5px;
+        background-color: red;
+        color: white;
+        display: none;
+    }
+}
+

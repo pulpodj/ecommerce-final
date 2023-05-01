@@ -88,7 +88,14 @@ showAlert('Producto agregado a la Orden','exito');
 }
 
 function comprarOrden(){
-  agregarOrden();
+
+  const existe = Order.find((prod)=>{
+    if(product.name === product.name){
+          return prod;
+    }
+  })
+  if(!existe)
+     agregarOrden();
   window.location.href = "/pages/order/order.html";
 
 }
