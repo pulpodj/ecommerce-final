@@ -50,5 +50,11 @@
         color: white;
         display: none;
     }
+
+    &__btn:hover {
+        border: 1px solid red;
+        background-color: grey;
+        
+    }
 }
 

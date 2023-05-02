@@ -397,6 +397,10 @@ body {
   color: white;
   display: none;
 }
+.cards-category-container__btn:hover {
+  border: 1px solid red;
+  background-color: grey;
+}
 
 .section-cards__title-container {
   display: flex;
@@ -743,36 +747,36 @@ body {
 @media screen and (max-width: 650px) {
   .about-vision-container {
     flex-direction: column;
+    width: 400px;
   }
   .about-vision-container__description {
     width: 100%;
   }
   .historia-carrusel {
-    width: 400px;
+    width: 100%;
     flex-direction: column;
   }
   .historia-carrusel__link {
-    width: 400px;
+    width: 500px;
   }
   .historia-carrusel__menu {
-    width: 400px;
+    width: 500px;
     flex-direction: row;
     justify-content: space-between;
     font-size: 10px;
   }
   .historia-carrusel__menu li a {
-    margin: 10px;
+    margin: 5px;
     width: 20px;
     height: 20px;
     font-size: 14px;
   }
   .historia-carrusel .historia-slider-container {
     margin: auto;
-    width: 100%;
-    height: 480px;
+    width: 500px;
   }
   .historia-carrusel .historia-slider-container__slider li img {
-    width: 100%;
+    width: 500px;
   }
 }
 .admin-product-container {
