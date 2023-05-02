@@ -118,3 +118,28 @@ function editProduct(id){
    el.date.value = product.date;
 }
 
+//Funcion para filtrar la table de usuario segun un texto pasado como parametro
+function metodoFilter(){
+    const text =  document.getElementById('search').value; 
+    const productsFiltrados = Products.filter((producto) => {
+            const filtra = producto.name.toLowerCase().includes(text.toLowerCase())
+            return filtra
+             });
+
+const cant = productsFiltrados.length;
+
+document.getElementById('admin-product-search-container_cant').innerText = 'Cantidad de Coincidencias: ' + cant;
+
+
+if(!cant){
+    Products = JSON.parse(localStorage.getItem('products')) || [];
+    renderizarTabla();
+    showAlert('No hubo coincidencias')
+}else{
+    Products = productsFiltrados;             
+    renderizarTabla();
+    Products = JSON.parse(localStorage.getItem('products')) || [];
+}
+
+
+}

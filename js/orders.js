@@ -121,6 +121,7 @@ function increment(id) {
 //Guardarlo en el local storage
 localStorage.setItem('order',JSON.stringify( Products));
 renderizarTabla();
+
 contarProductos();
 
   }

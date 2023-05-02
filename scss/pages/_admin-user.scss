@@ -144,16 +144,15 @@
 
 .admin-user-search-container {
     margin: 1rem 0;
-    padding: 2rem 0;
-    border-top: 3px solid rgb(224, 223, 223) ;
+    padding: 0 0 2rem;
     border-bottom: 3px solid rgb(224, 223, 223) ;
-    
+    width: 400px;
 
     &__input {
-        border: none;
-      outline: none;
-      border-bottom: 1px solid black;
-      margin: 0.5rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    margin: 0.5rem;
     }
     
 

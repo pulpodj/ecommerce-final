@@ -84,12 +84,12 @@ menuUser.addEventListener('mouseout', (evt) => {
 
 
 function contarProductos(){
+    Order = JSON.parse(localStorage.getItem('order')) || [];
     let cantidad = 0;
     Order.forEach((prod) => {
         cantidad += prod.cant; 
     })
-    cartCount.innerHTML = cantidad;
-
+    cartCount.innerText = cantidad;
 }
 
 contarProductos();
