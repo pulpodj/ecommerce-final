@@ -44,3 +44,40 @@
 
  } 
 
+ .alert-question {
+    position: absolute;
+    border: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background-color: $color-gb-primary;
+    padding: 2rem 3rem;
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition:  visibility linear 0.5s, opacity 0.5s linear;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    &.show {
+        visibility: visible;
+        opacity: 1;
+    }
+    &__btn {
+        background-color: rgb(14, 130, 74);
+        font-size: 1.25rem;
+        border: none;
+        border-radius: 55px;
+        color: white;
+        margin: 10px 20px 0 20px;
+        width: 70px;
+        height: 50px;
+    }
+
+    &__btn:hover {
+        background-color: rgb(64, 105, 85);
+        border: 1px solid black;
+       
+    }
+}

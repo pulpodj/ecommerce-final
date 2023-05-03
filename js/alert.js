@@ -44,3 +44,43 @@ function showAlert(text, type){
          
     },3000);
 }
+
+//funcion para preguntar por Si o No
+function showQuestion(text){
+
+    return new Promise(function(resolve,reject){
+        //vamos hacer nuestro pripio question 
+        const alertQuestion = document.createElement('div');
+        alertQuestion.classList.add('alert-question');
+
+        html = `<span class='mensaje'>${text}</span><br>
+                  <button class='alert-question__btn'
+                  id='alert-question-btn-si'>Si</button>
+                  <button class='alert-question__btn'
+                  id='alert-question-btn-no'>No</button>`;
+
+
+        //alertDialog.innerText = text;
+        alertQuestion.innerHTML = html;
+
+        document.querySelector('body').appendChild(alertQuestion);
+        //demora la aparicion
+        alertQuestion.classList.add('show')
+
+        const btnSi = document.getElementById('alert-question-btn-si');
+        const btnNo = document.getElementById('alert-question-btn-no');
+
+        btnSi.onclick = ()=>{
+          alertQuestion.classList.remove('show')
+          alertQuestion.remove()
+          resolve(true)
+        }
+        btnNo.onclick = ()=>{
+          alertQuestion.classList.remove('show')
+          alertQuestion.remove()
+          resolve(false)
+        }
+
+    });
+
+}

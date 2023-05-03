@@ -109,19 +109,12 @@ function limpiarInput(){
 
 //Funcion para borra un usuario seleccionado de la tabla
 function deleteUser(id){
-    Swal.fire({
-        title: 'Borrar Usuario',
-        text: '¿Esta seguro que desea borrar el Usuario seleccionado?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#3085d6',
-        confirmButtonText: 'Sí, borrarlo'
-      }).then((result) => {
+    showQuestion('¿Esta seguro que desea borrar el Usuario seleccionado?')
+      .then((result) => {
         if (result.isConfirmed) {
             Users.splice(id,1)
             //Guardarlo en el local storage
-            localStorage.setItem('Users',JSON.stringify( Users));
+            localStorage.setItem('users',JSON.stringify( Users));
             
             cargarTabla();
         
@@ -129,7 +122,7 @@ function deleteUser(id){
                 submitBtn.disabled = false;
                 submitBtn.style.backgroundColor = 'rgb(76, 121, 76)';
             }
-          Swal.fire('¡Borrado!', 'El Usuario ha sido borrado.', 'success');
+          showAlert('¡Borrado!', 'El Usuario ha sido borrado.', 'exito');
         }
       })
 }
@@ -174,7 +167,7 @@ document.getElementById('admin-user-search-container_cant').innerText = 'Cantida
 if(!cant){
   Users = JSON.parse(localStorage.getItem('users')) || [];
   cargarTabla();
-  Swal.fire('No hubo coincidencias')
+  showAlert('No hubo coincidencias')
 }else{
   Users = usersFiltrados;             
   cargarTabla();

@@ -1,7 +1,7 @@
-const user = JSON.parse(localStorage.getItem('currentUser'));
+const userAdminLS = JSON.parse(localStorage.getItem('currentUser'));
 
 
-if(!user || user.role !== 'ADMIN_ROLE'){
+if(!userAdminLS || userAdminLS.role !== 'ADMIN_ROLE'){
     //Sacar o redireccionar al usuario
     window.location.href = '/'
 }

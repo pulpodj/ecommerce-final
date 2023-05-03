@@ -83,12 +83,20 @@ showAlert('Producto añadido Correctamente','exito')
 }
 
 function deleteProduct(id){
-    Products.splice(id,1)
-    //Guardarlo en el local storage
-    localStorage.setItem('products',JSON.stringify( Products));
+    showQuestion('¿Esta seguro que desea borrar el producto seleccionado?')
+      .then((result) => {
+        if (result) {
+
+            Products.splice(id,1)
+            //Guardarlo en el local storage
+            localStorage.setItem('products',JSON.stringify( Products));
+            renderizarTabla();
+            showAlert('Producto eliminado Correctamente','error')
+        }
+      }).catch((error) =>{
+        console.log(error)
+      })
     
-    renderizarTabla();
-    showAlert('Producto eliminado Correctamente','error')
 }
 
 

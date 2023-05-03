@@ -161,3 +161,78 @@ document.getElementById('products-search-count').innerText = 'Se encontraron ' +
 renderizarProductos(productsFiltrados);
 
 }
+
+function precargaUserAdmin(){
+    const currentAdmin = localStorage.getItem('users') ;
+
+    if(!currentAdmin)
+       showQuestion('Desea cargar un Usuario Admin').then((result)=>{
+        if(result){
+        const newUser = {
+            fullName: 'Admin',
+            email: 'admin@gmail.com',
+            password: 'alfabeta',
+            date: '1990-01-01',
+            country: 'AR',
+            gender: 'masculino',
+            role: 'ADMIN_ROLE'
+        }
+        const Usuarios = [];
+        Usuarios.push(newUser);
+        localStorage.setItem('users',JSON.stringify( Usuarios))
+        precargaProductos()
+
+        }
+        else{
+            precargaProductos()
+        }
+    })
+    else
+    precargaProductos()
+} 
+
+function precargaProductos(){
+    const productosLS = localStorage.getItem('products') ;
+
+    if(!productosLS)
+    showQuestion('Desea cargar Productos de Ejemplo').then((result)=>{
+        if(result){
+        const Productos = [{category:"AG",
+        date:"2023-05-02",
+        description:" Herbicida no selectivo para el control postemergente de malezas anuales y perennes en áreas agrícolas, industriales, caminos, vías férreas, etc.  Este herbicida no deja residuos en el suelo y se inactiva al entrar en contacto con el mismo.",
+        image:"https://ecommerce-nicolas-muller.netlify.app/assets/images/card/01-glifosato.webp",
+        name:"Glifosato",
+        price:24900},
+        {category:"AG",
+        date:"2023-05-02",
+        description:" Herbicida que actúa en todos los tejidos vegetales verdes, y es particularmente activo contra gramíneas anuales y malezas de hoja ancha. Necesita de la fotosíntesis activa para manifiesta su efecto. En condiciones cálidas y soleadas, la actividad herbicida se desarrolla rápidamente en unas pocas horas.",
+        image:"https://ecommerce-nicolas-muller.netlify.app/assets/images/card/02-%20paraquat.webp",
+        name:"Paraquat",
+        price:31100},
+        {category:"AG",
+        date:"2023-05-02",
+        description:" Herbicida selectivo postemergente sistémico para el control de malezas gramíneas anuales y perennes. No controla malezas de hoja ancha ni ciperáceas.Es absorbido rápidamente por el follaje y se trasloca por floema y xilema.",
+        image:"https://ecommerce-nicolas-muller.netlify.app/assets/images/card/03-%20Cletodim.webp",
+        name:"Cletodim",
+        price:5600},
+        {category:"AG",
+        date:"2023-05-02",
+        description:"La urea es el fertilizante más utilizado. Es el sólido granulado de mayor concentración de nitrógeno (N). Es componente de vitaminas y de los sistemas de energía de la planta.Es necesario para la síntesis de la clorofila y como parte de la molécula de la clorofila.",
+        image:"https://ecommerce-nicolas-muller.netlify.app/assets/images/card/04-%20Urea.webp",
+        name:"Urea Granulada",
+        price:3900},
+        {category:"AG",
+        date:"2023-05-02",
+        description:"Estimulante y acondicionador del suelo. es un formulado a base de un complejo de aminoácidos libres de origen vegetal con un extracto orgánico de ácidos húmicos y fúlvicos, desarrollado como estimulante y acondicionador del suelo perteneciente a la familia de bionutrientes.",
+        image:"https://ecommerce-nicolas-muller.netlify.app/assets/images/card/05-Solmix.webp",
+        name:"Solmix",
+        price:65900}
+        ];
+        localStorage.setItem('products',JSON.stringify( Productos));
+        window.location.href = '/';
+        }
+    })
+}
+
+precargaUserAdmin()
+
