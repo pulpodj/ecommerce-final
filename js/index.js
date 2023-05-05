@@ -171,27 +171,21 @@ renderizarProductos(productsFiltrados);
 
 }
 
-//Funcion para filtrar las cards de productos si preciona enter en el input
+//Funcion los productos al presionar enter en el input de busqueda
 function buscarProductosInput(evt){
-
     if (evt.keyCode !== 13) return;
     const text = evt.target.value.toLowerCase().trim();
-    const productsFiltrados = productsLS.filter((product) => {
-            const filtra = product.name.toLowerCase().includes(text.toLowerCase())
-            return filtra
-             });
-    const cant = productsFiltrados.length;
-
-    document.getElementById('products-search-count').innerText = 'Se encontraron ' + cant + ' productos';
-
-renderizarProductos(productsFiltrados);
-
+    buscarProductos(text)
 }
 
+//Filtra los productos al precionar el boton buscar
+function buscarProductosBtn(){
+    const text =  document.getElementById('products-search').value;
+    buscarProductos(text)
+}
 
-//Funcion para filtrar la table de usuario segun un texto pasado como parametro
-function buscarProductos(){
-    const text =  document.getElementById('products-search').value; 
+//Funcion para filtrar la table de Productos segun un texto pasado como parametro
+function buscarProductos(text){
     const productsFiltrados = productsLS.filter((product) => {
             const filtra = product.name.toLowerCase().includes(text.toLowerCase())
             return filtra

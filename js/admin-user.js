@@ -151,13 +151,28 @@ function editUser(id){
 }
 
 
-//Funcion para filtrar la table de usuario segun un texto pasado como parametro
+//Funcion para filtrar la table de usuario al presionar el boton filtrar
 function metodoFilter(){
     const text =  document.getElementById('search').value; 
-    const usersFiltrados = Users.filter((usuario) => {
-            const filtra = usuario.fullName.toLowerCase().includes(text.toLowerCase())
-            return filtra
-             });
+    buscarUsuarios(text);
+
+}
+
+//Funcion para filtrar la table de usuario al presionar enter en el input
+function buscarUsuariosInput(evt){
+  if (evt.keyCode !== 13) return;
+  const text = evt.target.value.toLowerCase().trim();
+  buscarUsuarios(text);
+}
+
+
+//Funcion de Busqueda de usuarios por un parametro texto 
+function buscarUsuarios(text){
+
+  const usersFiltrados = Users.filter((usuario) => {
+          const filtra = usuario.fullName.toLowerCase().includes(text.toLowerCase())
+          return filtra
+           });
 
 const cant = usersFiltrados.length;
 
@@ -165,13 +180,13 @@ document.getElementById('admin-user-search-container_cant').innerText = 'Cantida
 
 
 if(!cant){
-  Users = JSON.parse(localStorage.getItem('users')) || [];
-  cargarTabla();
-  showAlert('No hubo coincidencias')
+Users = JSON.parse(localStorage.getItem('users')) || [];
+cargarTabla();
+showAlert('No hubo coincidencias')
 }else{
-  Users = usersFiltrados;             
-  cargarTabla();
-  Users = JSON.parse(localStorage.getItem('users')) || [];
+Users = usersFiltrados;             
+cargarTabla();
+Users = JSON.parse(localStorage.getItem('users')) || [];
 }
 
 

@@ -127,7 +127,8 @@
 <div class="admin-product-table-container">
     <div class="admin-product-search-container">
         <label for="search" style="font-weight: bold;">Buscar en la Tabla:</label>
-        <input type="text" name="search" class="admin-product-form__input" id="search" >
+        <input type="text" name="search" class="admin-product-form__input" id="search" 
+        onkeyup="buscarProductosInput(event)">
         <button  type="button" class="admin-product-search-container__btn" onclick="metodoFilter()" >Filtrar</button><br>
         <label id="admin-product-search-container_cant">Cantidad de Coincidencias: 0</label>
     </div>

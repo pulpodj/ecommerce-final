@@ -120,9 +120,21 @@ function editProduct(id){
    el.date.value = product.date;
 }
 
-//Funcion para filtrar la table de usuario segun un texto pasado como parametro
+//Funcion para filtrar la table de productos al precionar el boton de Filtrar
 function metodoFilter(){
     const text =  document.getElementById('search').value; 
+    buscarProductos(text);
+}
+
+//Funcion para filtrar la table de productos segun el input 
+function buscarProductosInput(evt){
+    if (evt.keyCode !== 13) return;
+    const text = evt.target.value.toLowerCase().trim();
+    buscarProductos(text);
+  }
+
+//Funcion de Busqueda de productos por un parametro texto   
+function buscarProductos(text) { 
     const productsFiltrados = Products.filter((producto) => {
             const filtra = producto.name.toLowerCase().includes(text.toLowerCase())
             return filtra
