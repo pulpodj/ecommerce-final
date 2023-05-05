@@ -108,13 +108,7 @@ function editProduct(id){
    let product = Products[id];
 
    const el = productForm.elements;
-   
-//    Object.keys(product).forEach((key) => {
-//     if(typeof product[key] === "boolean")
-//         return el[key].checked = product[key];
 
-//     el[key].value = product[key];    
-//    })
 
     editIndex = id;
     

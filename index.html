@@ -75,58 +75,59 @@
         
         <section class="section-cards">
             <header class="section-cards__header">
-                <div class="section-cards__title-container">
-                    <div class="section-cards-title">
+                <div class="section-cards__title-container" >
+                    <div class="section-cards-title" id="HA" onclick="elegirCategoria('HA')">
                         <img class="section-cards-title__img" src="/assets/images/slider/hacienda.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('HA')">
+                        <a href="#" class="section-cards-title__link" >
                             Consignación de Hacienda
                         </a>
                     </div>
-                    <div class="section-cards-title">
+                    <div class="section-cards-title" id="NA" onclick="elegirCategoria('NA')">
                         <img class="section-cards-title__img" src="/assets/images/slider/nutricionAnimal.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('NA')">
+                        <a href="#" class="section-cards-title__link" >
                             Nutrición Animal
                         </a>
                     </div>
-                    <div class="section-cards-title">
+                    <div class="section-cards-title" id="AC" onclick="elegirCategoria('AC')">
                         <img class="section-cards-title__img" src="/assets/images/slider/acopiol.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('AC')">
+                        <a href="#" class="section-cards-title__link" >
                             Acopio de Granos
                         </a>
                     </div>
-                    <div class="section-cards-title">
+                    <div class="section-cards-title" id="AG" onclick="elegirCategoria('AG')">
                         <img class="section-cards-title__img" src="/assets/images/slider/agroinsumos.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('AG')">
+                        <a href="#" class="section-cards-title__link" >
                             Agroinsumos
                         </a>
                     </div>
-                    <div class="section-cards-title">
+                    <div class="section-cards-title" id="SE" onclick="elegirCategoria('SE')">
                         <img class="section-cards-title__img" src="/assets/images/slider/semillero.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('SE')">
+                        <a href="#" class="section-cards-title__link" >
                             Semillero
                         </a>
                     </div>
-                    <div class="section-cards-title">
+                    <div class="section-cards-title" id="CO" onclick="elegirCategoria('CO')">
                         <img class="section-cards-title__img" src="/assets/images/slider/combustible.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('CO')">
+                        <a href="#" class="section-cards-title__link" >
                             Combustibles
                         </a>
                     </div>
-                    <div class="section-cards-title">
+                    <div class="section-cards-title" id="SG" onclick="elegirCategoria('SG')">
                         <img class="section-cards-title__img" src="/assets/images/slider/seguros.png" alt="">
-                        <a href="#" class="section-cards-title__link" onclick="elegirCategoria('SG')">
+                        <a href="#" class="section-cards-title__link" >
                             Seguros
                         </a>
                     </div>
                 </div>
                 <div class="section-cards__products-search-conteiner">
                     <div class="product-search">
-                        <label for="" class="product-search__label">Buscar</label>
-                        <input type="Text" placeholder="Buscar" class="product-search__input" id="products-search">
+                        <label for="" class="product-search__label">Buscar:</label>
+                        <input type="Text" placeholder="Buscar" class="product-search__input" id="products-search"
+                        onkeyup="buscarProductosInput(event)">
                         <button class="product-search__btn" onclick="buscarProductos()">Buscar</button>
                     </div>
                     <div class="section-cards__products-count" id="products-search-count">
-                        Se encontraron X Productos
+                        
                     </div>
                 </div>
                 

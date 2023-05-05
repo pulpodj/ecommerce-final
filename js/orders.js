@@ -77,11 +77,11 @@ function deleteProduct(id){
 function finalizarCompra(){
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   if(!currentUser){
-    showAlert('Debe estar logueado para poder Finalizar la compra','advertencia')
+    showAlert('Debe estar logueado para poder Finalizar la compra','info')
   } 
   else{
     if(Products.length === 0){
-      showAlert('Debe seleccionar un producto para poder Finalizar la compra','advertencia')
+      showAlert('Debe seleccionar un producto para poder Finalizar la compra','info')
     }else{
       localStorage.removeItem('order')
       Products = [];

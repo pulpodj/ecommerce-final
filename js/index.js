@@ -55,6 +55,8 @@ renderizarProductos(productsLS);
 // funcion para los botones de eleccion de categoria
 function elegirCategoria(category){
     const cartCategory = document.getElementById('cards__category');
+    const divCategory = document.getElementById(category);
+    const divCatAll = document.querySelectorAll('.section-cards-title')
     let text;
 
     switch (category) {
@@ -83,13 +85,36 @@ function elegirCategoria(category){
             text = 'Categoria: Todos';
         }
 
-        if(category != 'Todos')
+        if(isSelectCategory(category)){
+            text = 'Categoria: Todos';
+            category = 'Todos'
+        };
+             
+        divCatAll.forEach((div)=>{
+            div.classList.remove('select');
+        })
+        
+        if(category != 'Todos'){
             btnCloseCategory.style.display = 'block';
+            divCategory.classList.toggle('select');
+           }
         else
-        btnCloseCategory.style.display = 'none';
-        cartCategory.innerHTML = `${text}`
-        filtrarProductos(category)
+            btnCloseCategory.style.display = 'none';
+        cartCategory.innerHTML = `${text}`;
+        
+        filtrarProductos(category);
+       
 
+}
+
+function isSelectCategory(category){
+    
+    const divSelect = document.querySelectorAll('.select')
+    if(divSelect.length > 0)
+    
+       return(divSelect[0].id == category)
+       
+    
 }
 
 btnCloseCategory.addEventListener('click',() => {
@@ -131,7 +156,7 @@ contarProductos();
 
 }
 
-//Funcion para filtrar la table de usuario segun un texto pasado como parametro
+//Funcion para filtrar las cards de productos
 function filtrarProductos(category){
         let productsFiltrados = [];
     if(category === 'Todos'){
@@ -145,6 +170,24 @@ function filtrarProductos(category){
 renderizarProductos(productsFiltrados);
 
 }
+
+//Funcion para filtrar las cards de productos si preciona enter en el input
+function buscarProductosInput(evt){
+
+    if (evt.keyCode !== 13) return;
+    const text = evt.target.value.toLowerCase().trim();
+    const productsFiltrados = productsLS.filter((product) => {
+            const filtra = product.name.toLowerCase().includes(text.toLowerCase())
+            return filtra
+             });
+    const cant = productsFiltrados.length;
+
+    document.getElementById('products-search-count').innerText = 'Se encontraron ' + cant + ' productos';
+
+renderizarProductos(productsFiltrados);
+
+}
+
 
 //Funcion para filtrar la table de usuario segun un texto pasado como parametro
 function buscarProductos(){

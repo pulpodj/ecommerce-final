@@ -39,6 +39,13 @@
     border-top: 3px solid blue;
 }
 
+.section-cards-title.select {
+    background-color: cadetblue;
+    box-shadow: 5px 5px 10px rgb(189, 183, 183);
+    border-top: 3px solid blue;
+}
+
+
 @media screen and (max-width: 700px) {
     .section-cards__title-container {
         display: grid;
